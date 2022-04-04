@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Search API Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="sideBar" id="sideBar">
+        <div class="sideBarIconFlexContainer">
+            <div class="hamburgerMenuContainer" id="menuIconS" onclick="closeSideBar()">
+                <div class="ham-line"></div>
+                <div class="ham-line"></div>
+                <div class="ham-line"></div>
+            </div>
+            <div class="YouTube-Icon">YouTube</div>
+        </div>
+        <div class="sec-1">
+            <p class="sideBar-options links">Home</p>
+            <p class="sideBar-options links">Explore</p>
+            <p class="sideBar-options links">Shorts</p>
+            <p class="sideBar-options links">Subscriptions</p>
+        </div>
+        <div class="sec-2">
+            <p class="sideBar-options links">Home</p>
+            <p class="sideBar-options links">Explore</p>
+            <p class="sideBar-options links">Shorts</p>
+            <p class="sideBar-options links">Subscriptions</p>
+        </div>
+        <div class="subscriptions ">
+            <h4 class="subs-title">Subscriptions</h4>
+            <p class="sideBar-options links">Music</p>
+            <p class="sideBar-options links">Sports</p>
+            <p class="sideBar-options links">Gaming</p>
+            <p class="sideBar-options links">Movies&Shows</p>
+        </div>
+    </div>
+    </div>
+    <div class="mainContainer" id="mainContainer">
+    <header>
+        <div class="headerMenu" id="headerMenu">
+            <div class="leftIconMenu" id="leftIconMenu">
+                <div class="hamburgerMenuContainer" id="menuIconH" onclick="openSideBar()">
+                    <div class="ham-line"></div>
+                    <div class="ham-line"></div>
+                    <div class="ham-line"></div>
+                </div>
+                <div class="YouTube-Icon">YouTube</div>
+            </div>
+            <div class="searchBarFlexContainer">
+                <div class="searchBoxContainer">
+                    <img class="searchIcon" src="assets/search-50.png" alt="" id="searchIcon1">
+                <form class="inputContainer" id="searchForm">
+                    <input type="text" placeholder="Search" id="searchInput" name="searchInput" value="" >
+                    <button class="searchButton" type="submit" id="searchButton" ><img class="searchIcon" src="assets/search-50.png" alt=""></button>
+                </form>        
+            </div>
+            </div>
+            <div class="topRight-MenuContainer">
+                <div class="top-right-option"><img class="topRight-menuIcons" src="assets\icons-video-48.png" alt=""></div>
+                <div class="top-right-option"><img class="topRight-menuIcons" src="assets\circled-menu-icon30.png" alt=""></div>
+                <div class="top-right-option"><img class="topRight-menuIcons" src="assets\icons-notification-48.png" alt=""></div>
+                <div class="top-right-option"><div class="gmailIcon">C</div></div>
+            </div>
+    </header>
+    <div class="content-Container" id="contentContainer">
+    </div>    
+</div>
+    <script src="index.js"></script>
+</body>
+
+</html>
