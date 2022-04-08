@@ -1,15 +1,6 @@
 
 
-const appState = {
-    searchEventCount: 0,
-    incrementCount: function(){
-        return this.searchEventCount++
-    }
-}// BREAKTHROUGH 4/2/22-- USING OBJS TO TRACK AND KEEP THE STATE IS KEY TO REFESHING WINDOW
 
-let options = {
-    method:'GET',
-}
 
 const searchButton = document.getElementById('searchButton');
 let getYouTubeSearchResults = () => {
@@ -17,27 +8,12 @@ let getYouTubeSearchResults = () => {
     // which is then inserted as a value after the key in the queryString and updated automatically
     let inputText = document.getElementById('searchInput').value;
     console.log('search input =>',inputText )// testing the inputText value
-    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${inputText}&maxResults=12&key=APIKEYGOESHERE`,options)
+    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${inputText}&maxResults=12&key=APIKEYGOESHERE`)
 };
 
-function reloadPage(){
-    let c = appState.searchEventCount;
-    if(c !== 1){
-        //return  window.location.reload();
-        return appState.incrementCount()
-    } else {
-        
-        console.log('CLICK EVENT INSIDE RELOAD WAS TRIGGERED, search count=>', appState.searchEventCount);
-        console.log('videoContainers value=>', videoContainers);
-          return  searchButton.addEventListener('click', (e) => {            
-            e.preventDefault()
-        })    
-    }
-}  
+  
 
 searchButton.addEventListener('click', (e) => {
-    appState.incrementCount();
-           // reloadPage()
     // prevent the form from submitting the information by default
             e.preventDefault();
         getYouTubeSearchResults()
