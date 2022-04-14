@@ -8,7 +8,7 @@ let getYouTubeSearchResults = () => {
     // which is then inserted as a value after the key in the queryString and updated automatically
     let inputText = document.getElementById('searchInput').value;
     console.log('search input =>',inputText )// testing the inputText value
-    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${inputText}&maxResults=12&key=APIKEYGOESHERE`)
+    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${inputText}&maxResults=12&key=AIzaSyACpRC3S1HXee-NP0wik4w8AgBbb_cahi4`)
 };
 
   
@@ -30,6 +30,7 @@ searchButton.addEventListener('click', (e) => {
             // get the id of the content container to render content to it dynamically using the DOM
 
             const contentContainer = document.getElementById('contentContainer');
+            contentContainer.innerHTML= "";
             data.items.forEach(item => {
                 let content = item.snippet;
                 console.log(content); // output is the media that can be rendered to HTML dynamically      
@@ -41,19 +42,20 @@ searchButton.addEventListener('click', (e) => {
                 div.classList.add(`snippetContainer`);
                 console.log('div class added -- snippet')
                 //let snippetContainer = document.getElementsByClassName('snippetContainer')
+                
                 // append each div element create to the parent container
-                contentContainer.appendChild(div)
                 console.log('div appended again')
+                
                 /* now I am using the innerHTML property to render the data to the page and
                 -to also create new elements/ containers for the data to matc the youtube 
                      -homepage as closely as I can 
                 */
-                
+
                 div.innerHTML = `
             <img style= width:${content.thumbnails.medium.width}; height:${content.thumbnails.medium.height};\
                  class= "thumbnail" src="${content.thumbnails.medium.url}">
                 <div class= "videoTitle-flex-container">
-                 <div class= "mockAvatar"></div>
+                <div class= "mockAvatar"></div>
                  <h4 class="videoTitle">${content.title}</h4>
                  <div class= "videoOptionsIconContainer">
                  <div class= "optionDot">.</div>
@@ -66,6 +68,7 @@ searchButton.addEventListener('click', (e) => {
                  <p class= "publishTime">${content.publishedAt}</p>
                  </div>   
             `
+            contentContainer.appendChild(div)
         });
     })
     .catch(err => console.log("that didn't work heres the err=>", err))
