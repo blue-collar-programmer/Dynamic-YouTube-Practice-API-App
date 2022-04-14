@@ -8,7 +8,7 @@ let getYouTubeSearchResults = () => {
     // which is then inserted as a value after the key in the queryString and updated automatically
     let inputText = document.getElementById('searchInput').value;
     console.log('search input =>',inputText )// testing the inputText value
-    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${inputText}&maxResults=12&key=AIzaSyACpRC3S1HXee-NP0wik4w8AgBbb_cahi4`)
+    return fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${inputText}&maxResults=12&key=APIKEYGOESHERE`)
 };
 
   
